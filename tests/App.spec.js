@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 
 import App from '../App';
 
@@ -12,13 +12,12 @@ describe('App', () => {
 
   describe('within View', () => {
     it('renders Text with text "Aucun article"', () => {
-      const txt = shallow(<App />);
-      expect(
-        txt
-          .find(Text)
-          .at(0)
-          .props().children
-      ).toEqual('Aucun article');
+      const wrapper = shallow(<App />);
+      expect(wrapper.find(Text).props().children).toEqual('Aucun article');
+    });
+    it('renders Button with title "Ajouter un article"', () => {
+      const wrapper = shallow(<App />);
+      expect(wrapper.find(Button));
     });
   });
 });

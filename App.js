@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,12 +10,20 @@ const styles = StyleSheet.create({
   },
 });
 
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Aucun article</Text>
-    </View>
-  );
-};
+export default class App extends React.Component {
+  handlePressAddArticle = () => {
+    Alert.alert('Touché');
+  };
 
-export default App;
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Aucun article</Text>
+        <Button
+          onPress={this.handlePressAddArticle}
+          title="Ajouter un article"
+        />
+      </View>
+    );
+  }
+}
