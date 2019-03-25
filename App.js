@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js!</Text>
+      <Text>Aucun article</Text>
     </View>
   );
 };
